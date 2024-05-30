@@ -1,0 +1,95 @@
+<!DOCTYPE html">
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <title>THE Magasin</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha384-eaGiL7haTqjWB/jrDXFxrLhlvRMvlEDjaiDJsH0pfdq1aXerSzLNMp96w2tmR4N" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/53c66b946a.js" crossorigin="anonymous"></script>
+    <style>
+        body,
+        
+        h2,
+        p,
+        ul,
+        li {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background-color: #f6f4f4;
+            color: #333;
+        }
+
+        #conteneur {
+            max-width: 960px;
+            margin: 0 auto;
+            
+           
+        }
+
+        #header {
+           
+            color: #0c0303;
+            padding: 20px;
+            text-align: center;
+        }
+
+        #header a {
+            text-decoration: none;
+            color: #eee;
+        }
+
+        nav {
+            background-color: #4fa2ef;
+        }
+
+        #menu {
+            list-style: none;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        #menu li {
+            display: inline-block;
+        }
+
+        #menu a {
+            display: block;
+            padding: 15px 20px;
+            text-decoration: none;
+            color: #fff;
+            transition: background-color 0.3s;
+        }
+
+        #menu a:hover {
+            background-color: #1a252f;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="conteneur">
+       
+        <nav>
+            <ul id="menu">
+                <li><a href="{% url 'index' %}">Magasin</a></li>
+
+                <li><a href="{% url 'blogg:liste_postes' %}">My blogg</a></li>
+                
+
+
+                    
+                </a></li>
+               
+            </ul>
+        </nav>
+        <h1 id="header"><span>Welcome</span></h1>
+    </div>
+</body>
+
+</html>

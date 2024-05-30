@@ -1,0 +1,33 @@
+{% extends 'magasin/base.html' %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>{% block title %} Home {% endblock title %}</title>
+    {% block content %} {% block styles %} {%endblock %}
+  </head>
+  <body>
+    <form method="POST" class="">
+      {% csrf_token %}
+      <div class="">
+        <div class="container">
+          <table>
+            <tr>
+              {% for article in produit %}
+              <td>
+                <div class="img">
+                  <img src="/media/{{ article.img }}" />
+                </div>
+                <h6>{{article.libelle}}</h6>
+                <p>{{article.prix}} DT.</p>
+              </td>
+              {% endfor %}
+            </tr>
+          </table>
+        </div>
+      </div>
+    </form>
+    {% endblock %} {% load static %}
+  </body>
+</html>

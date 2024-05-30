@@ -1,0 +1,24 @@
+{% extends 'magasin/base.html' %}
+
+{% block content %}
+  <h1><center>Detail Produit </center></h1>
+  <div class="row">
+    <dib class="col-md-6">
+      <div>
+        <center> <img src="/media/{{product.img}}" alt="" ></center>
+      </div>
+    </div>
+  <div class="col-md-6">
+    <div class="text-warning display">
+      {{  product.libellé}}
+    </div>
+    <div  class="text-warning display">
+      {{ product.description}}
+    </div>
+  <div class="text-danger">
+     Prix : {{ product.prix}} DT 
+  </div>
+
+  </div>
+
+{% endblock content %}

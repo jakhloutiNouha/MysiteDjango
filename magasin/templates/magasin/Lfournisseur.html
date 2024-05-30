@@ -1,0 +1,35 @@
+{% extends 'magasin/base.html' %}
+{% block content %}
+<div class="container mt-3">
+    <center><h4> Fournisseur Details </h4></center>
+    <a href="{% url 'addfournisseur' %}" class="btn btn-sn btn-info">Add New</a>
+    <hr>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Fournisseur Nom</th>
+                <th>Fournisseur Adresse</th>
+                <th>Fournisseur Email</th>
+                <th>Fournisseur Tel</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+          {% for f in fournisseur %}
+            <tr>
+                <td>{{f.nom}}</td>
+                <td>{{f.adresse}}</td>
+                <td>{{f.email}}</td>
+                <td>{{f.tel }}</td>
+                <td>
+                <a href="updatefournisseur/{{ f.nom }}" class="btn btn-sn btn-info">Edit</a>
+                <a href="deletefournisseur/{{ f.nom }}" class="btn btn-sn btn-danger">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br>
+    <br>
+</body>
+{% endblock %}

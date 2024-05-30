@@ -1,0 +1,29 @@
+{% extends 'magasin/base.html' %}
+
+{% block content %}
+<div class="module">
+    <center><h2>Liste des Produits</h2></center>
+    <a href="{% url 'majProduits' %}" class="btn btn-sn btn-info">Add New</a><br>
+    
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Description</th>
+                <th>Prix</th>
+                <th>Image</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for p in product %}
+            <tr>
+                <td>{{ p.title }}</td>
+                <td>{{ p.description }}</td>
+                <td>{{ p.price }} DT</td>
+                <td><img src="{{ p.image.url }}" alt="{{ p.title }}" style="max-width: 100px; max-height: 100px;"></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

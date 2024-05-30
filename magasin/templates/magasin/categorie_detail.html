@@ -1,0 +1,50 @@
+{% extends 'magasin/base.html' %}
+{% block content %}
+<div class="container">
+    <h1 class="display-4 mb-4 fw-bold text-center">{{ categorie.get_name_display }}</h1>
+    <hr>
+    <h2 class="display-4 mb-4 fw-bold text-left">Détails des produits de la catégorie</h2>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        {% for produit in produits %}
+        <div class="col">
+            <div class="card h-100">
+                <img src="/media/{{ produit.img }}" class="card-img-top" alt="{{ produit.libellé }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ produit.libellé }}</h5>
+                    <p class="card-text">{{ produit.description }}</p>
+                    <p class="card-text">{{ produit.prix }} DT</p>
+                </div>
+                <!-- Ajoutez d'autres détails ou actions pour chaque produit -->
+            </div>
+        </div>
+        {% empty %}
+        <p>Aucun produit trouvé.</p>
+        {% endfor %}
+    </div>
+</div>
+
+
+<style>
+  hr {
+    color: red;
+    width: 80%;
+    margin: 20px auto;
+  }
+  .btn-primary {
+    background-color: green;
+}
+.card-title {
+    font-size: 1.5rem;
+}
+
+.card-text {
+    font-size: 1.2rem;
+}
+.card-body {
+    padding: 10px;
+}
+
+</style>
+{% endblock %}
+
+

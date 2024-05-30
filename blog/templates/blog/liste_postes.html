@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste des Postes</title>
+</head>
+<body>
+    <h1>Liste des Postes</h1>
+    <ul>
+        {% for poste in object_list %}
+            <li><a href="{% url 'detail_poste' poste.pk %}">{{ poste.title }}</a></li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'creer_poste' %}">Poster</a>
+</body>
+</html>

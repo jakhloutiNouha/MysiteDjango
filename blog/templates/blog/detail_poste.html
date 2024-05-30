@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Détail du Poste</title>
+</head>
+<body>
+    <h1>{{ object.title }}</h1>
+    <p>{{ object.content }}</p>
+    <p>Statut: {{ object.get_status_display }}</p>
+    <p>Date de création: {{ object.created_on }}</p>
+    {% if object.image %}
+        <img src="{{ object.image.url }}" alt="{{ object.title }}">
+    {% endif %}
+</body>
+</html>
